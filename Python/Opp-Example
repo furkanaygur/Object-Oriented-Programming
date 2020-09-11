@@ -1,0 +1,59 @@
+# ********** Simple Class Example **********
+# class Person():
+#     def __init__(self, name, birthday):  # class çaprıldığında otomatik olarak çalışacak method kullanımı böyle
+#         print("Person Created with __init__")
+#         self.name = name
+#         self.Age = birthday
+#
+#     def intro(self):
+#         print(f"Hello I'am {self.name}")
+#
+#     def calculateBirthYear(self):
+#         return 2020 - self.Age
+#
+#
+# p1 = Person(birthday=22, name="furkan")
+# print(f'Name: {p1.name} \nAge: {p1.Age}')
+# p1.intro()
+# print(f"I was born in {p1.calculateBirthYear()}")
+
+
+# *********************************************************
+# ************** Inheritance ******************************
+
+class Person():
+    def __init__(self, name, birthday):
+        print("Person Created with __init__")
+        self.name = name
+        self.Age = birthday
+
+    def calculateBirthYear(self):
+        return 2020 - self.Age
+
+    def whoAmI(self):
+        return "I am Person"
+
+
+class Student(Person):
+    def __init__(self, name, birthday, number):
+        Person.__init__(self, name, birthday)
+        self.no = number
+        print("Student Created with Student _init__")
+
+    # *** OVERRIDE ***
+    def whoAmI(self):
+        return "I am Student"
+
+
+class Teacher(Person):
+    def __init__(self, name, birthday,branch):
+        super().__init__(name, birthday)  # = Person.__init__(self, name, birthday)
+        self.branch = branch
+
+
+p1 = Person("furkan", 22)
+s1 = Student("student", 18, 1)
+t1 = Teacher("Teacher", 30,"History")
+print(f"{p1.name} {p1.Age} {p1.calculateBirthYear()} {p1.whoAmI()}")
+print(f"{s1.Age} {s1.name} {s1.calculateBirthYear()} {s1.whoAmI()} {s1.no}")
+print(f"{t1.Age} {t1.name} {t1.calculateBirthYear()} {t1.whoAmI()} {t1.branch}")
