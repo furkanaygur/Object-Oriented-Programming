@@ -1,6 +1,6 @@
 # ********** Simple Class Example **********
 # class Person():
-#     def __init__(self, name, birthday):  # class çaprıldığında otomatik olarak çalışacak method kullanımı böyle
+#     def __init__(self, name, birthday):  # (Constructor) class çaprıldığında otomatik olarak çalışacak method kullanımı böyle
 #         print("Person Created with __init__")
 #         self.name = name
 #         self.Age = birthday
